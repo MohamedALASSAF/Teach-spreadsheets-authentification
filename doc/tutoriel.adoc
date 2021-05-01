@@ -56,3 +56,8 @@ image::Images\overview.PNG[width=50%,height=50%]
   <version>2.10.0</version>
 </dependency>
 ```      
+
+== 3. Authentification
+In this section you will see how you will build the authentification to get an access token. To call Microsoft Graph, your app must acquire an access token from Azure Active Directory (Azure AD). If you get an access token from Azure Azure AD it will allow you to have access to Microsoft Graph resources and the file wich are in your onedrive.
+
+
