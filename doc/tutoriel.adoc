@@ -30,3 +30,30 @@ image::Images\creationApp.PNG[width=50%,height=50%]
        4. On the TeachSpreadSheetsApp page (tab overview), copy the value of the application ID (client) and save it, you will need it after.
          
 image::Images\overview.PNG[width=50%,height=50%]
+
+
+== 2. Add Microsoft Graph SDKs to your Maven Project
+ [start=1]
+       1. The Microsoft Graph SDKs are designed to simplify the access of Microsoft Graph API.
+       The service library of Microsoft Graph SDKs contains models and request builders that are generated from Microsoft Graph metadata. So it will allow you to interact easily with your Onedrive. https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage[OneDrive] is an online storage platform offered by microsoft.
+       
+ [start=2]
+       2. Add the dependency in the dependencies element in pom.xml:
+       
+```xml
+<dependency>
+       <groupId>com.microsoft.graph</groupId>
+	<artifactId>microsoft-graph-auth</artifactId>
+	<version>0.3.0</version>
+</dependency>
+<dependency>
+	<groupId>com.microsoft.graph</groupId>
+	<artifactId>microsoft-graph-core</artifactId>
+	<version>1.0.9</version>
+</dependency>
+<dependency>
+  <groupId>com.microsoft.graph</groupId>
+  <artifactId>microsoft-graph</artifactId>
+  <version>2.10.0</version>
+</dependency>
+```      
