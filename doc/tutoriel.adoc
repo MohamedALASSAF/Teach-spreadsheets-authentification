@@ -32,11 +32,11 @@ image::Images\overview.PNG[width=50%,height=50%]
 
 
 == 2. Add Microsoft Graph SDKs to your Maven Project
- [start=1]
+[start=1]
        1. The Microsoft Graph SDKs are designed to simplify the access of Microsoft Graph API.
        The service library of Microsoft Graph SDKs contains models and request builders that are generated from Microsoft Graph metadata. So it will allow you to interact easily with your Onedrive. https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage[OneDrive] is an online storage platform offered by microsoft.
        
- [start=2]
+[start=2]
        2. Add the dependency in the dependencies element in pom.xml:
        
 ```xml
