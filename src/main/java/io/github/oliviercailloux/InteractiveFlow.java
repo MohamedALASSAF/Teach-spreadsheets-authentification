@@ -8,7 +8,7 @@ import com.microsoft.graph.requests.GraphServiceClient;
 import java.util.List;
 import okhttp3.Request;
 
-public class App 
+public class InteractiveFlow 
 {
 	private final static String CLIENT_ID = "4b5d4470-571b-4602-816e-87cc364008e7";
 	  private final static List<String> SCOPES = ImmutableList.of("User.Read");
