@@ -6,18 +6,22 @@ Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud 
 
        1. Prerequisite
 		* To access to the Microsoft Graph API you must have an Azure account : You can create one and access to Microsoft Graph for free. indeed with a free account we can create up to 10 applications on Azure and send 1 000 0000 requests per month. So for our project it is more than enough. Azure also propose paid sevices for more features like Azure SQL Database, VPN ,virtual machine etc. (https://azure.microsoft.com/fr-fr/free/?WT.mc_id=A261C142F[source (bottom of the page to see what we have for free)]
-		* If you haven't an Azure account, don't worry you can create new a one. Just make sure that you are using a personnal email (if not you will not be able to register your app as we can see on the picture below) .
+		* If you haven't an Azure account, don't worry you can create new a one. Just make sure that you are using a personnal email (if you use your Dauphine email you will not be able to register your app as we can see on the picture below) .
+		
 		
 image::Images\prerequis.png[width=50%,height=50%]
 
 source: https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app[Microsoft Documentation] & https://signup.live.com/signup?ru=https://login.live.com/oauth20_authorize.srf%3flc%3d1033%26response_type%3dcode%26client_id%3d51483342-085c-4d86-bf88-cf50c7252078%26scope%3dopenid%2bprofile%2bemail%2boffline_access%26response_mode%3dform_post%26redirect_uri%3dhttps%253a%252f%252flogin.microsoftonline.com%252fcommon%252ffederation%252foauth2%26state%3drQIIAY2TPWzjZBjH46bNtZVOVOiEbjplqBCiJHltv47tSB3y4bROYztOTRObIfJXYjv2a8dfSbxwI-MNLJxgQUyF6aYTEwtLxXDzbUwgJsTEABJpJfZbHun5P89_ef6_5_gRVSfroA4-LhN10Do1ITQgYMgaaRigBlkTrxmQtmosDW2KNA1rTpqDCgVwSIL4_eOT519_9Tr_x7z68t9ffj7DPv_mJXY0893crpthcIt96KRplLQajSiMU92v60UWP4waibtALmq4yLI3jdcY9gbDfsew272kSdIUSdM4yxAUTZM0AepiIRRqYTmq0k5FYuAIWwA0peMNlWUh9MxUDbRALPqeprSB5llLsWd5O89GCORULHhC6oJ73RlOeFzwuJ22wFVvCUSPKyRlAd_uvSe1s9Qh7ksYu4X9197RPIyDWRQm6cvyb3tSZCPe6oYI2WZav1-zUeqaeuqGaBSHkR2nrp2cQ76vBD2y2DbnkWxN2xZpIrE9gfKCk2GhOpw3pEw6zgeZOjeZ7oSZq5owEdUZrEVicLUc6D3JyARZHDW5gLDgp31WGkUxGAxgGOG8tORQPqn5HD9ObK4Ao8BVVdZXvUG-Ra6rLUYrdtMrGMczLxccEmaG0ovV_sV4QfGDy4S-WjHXdJRvlNSXhmwnuNbYLGJjVtjQjNSnWR3EGVo5yw4ly7yUd4Zt6SLzeQohL6Tl0ahzEeb62JNRECWwL027TX0wdml_vWUm25xg0htwnYqSmuTCxEq1YXQpK-tlrJhrtO2ZV5yvkcPETKyuYXSSNc1P5VQeN-Fal4S276gRf1s-_R-YQEf6wg52Z97hsmNmvSMlXCd1ZKeNV-XHYbzQkVs8BJDclYfvYmtkiR3P3GCXVhKiB2t1Fx1yraod6K5fjeJw7vr2m33sj_0PDg9Oyk9L1dJHT0C5dXh4fFK67_7ex7492GH_yc2r7559_yv3w2fnz5eT09LdQePasHhPWfn2jXM2P5NdKE-ZbB5ucZNLtvOcna5DZ9XVVyaVnFMt_EUFe1Gp3FUO-d5M5BRI_VnBvnhU-vHoHX_m7fETAhB4DcAajlcJvAWaLQJqPz0u_Qc1%26estsfed%3d1%26lw%3d1%26fl%3deasi2%26cobrandid%3ded5d1924-9524-4e70-8f68-5ee5e35afbef%26fci%3dc44b4083-3bb0-49c1-b47d-974e53cbdf3c%26mkt%3dEN-US%26uaid%3db8999c80fc764b6394fdccc52b017f9d&mkt=EN-US&uiflavor=web&lw=1&fl=easi2&cobrandid=ed5d1924-9524-4e70-8f68-5ee5e35afbef&client_id=51483342-085c-4d86-bf88-cf50c7252078&uaid=b8999c80fc764b6394fdccc52b017f9d&suc=c44b4083-3bb0-49c1-b47d-974e53cbdf3c[Error given by trying to create an account with Dauphine email]
 
 [start=2]
-       2. Go to the Register App page with https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps[this link]  .
+	2. Set up a tenant : for this you can follow the Microsoft doc : https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant 
+
+[start=3]
+       3. Go to the Register App page with https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps[this link]  .
            After signing up or registering, you will be lead to the the Register App page.
            On the Register an App page, set the values as follows.
            * Set the Name on TeachSpreadSheetsApp.
            * Define the Types of Accounts supported in an microsoft organization directory and personal accounts.
-           * Under URI redirect,replace the drop-down list by "Public client/native(mobile and desktop)" and set value on "https://login.microsoftonline.com/common/oauth2/nativeclient".
+           * Under URI redirect ,replace the drop-down list by "Public client/native(mobile and desktop)" and set value on "http://localhost".
           
 image::Images\creationApp.PNG[width=50%,height=50%]
