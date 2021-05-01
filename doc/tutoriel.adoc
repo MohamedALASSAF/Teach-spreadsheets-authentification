@@ -10,7 +10,6 @@ Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud 
 		
 		
 image::Images\prerequis.png[width=50%,height=50%]
-
 *Error given by trying to create an account with Dauphine email*
 
 [start=2]
