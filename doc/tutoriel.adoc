@@ -6,7 +6,7 @@ Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud 
 
        1. Prerequisite
 		* To access to the Microsoft Graph API you must have an Azure account : You can create one and access to Microsoft Graph for free. indeed with a free account we can create up to 10 applications on Azure and send 1 000 0000 requests per month. So for our project it is more than enough. Azure also propose paid sevices for more features like Azure SQL Database, VPN ,virtual machine etc. (https://azure.microsoft.com/fr-fr/free/?WT.mc_id=A261C142F[source (bottom of the page to see what we have for free)]
-		* If you haven't an Azure account, don't worry you can create new a one. Just make sure that you are using a personnal email (if you use your Dauphine email you will not be able to register your app as we can see on the picture below) .
+		* If you haven't an Azure account, don't worry you can create new a one. Just make sure that you are using a personnal email (if you use your Dauphine email you will not be able to register your app as we can see on the picture below). You can learn more about that here  https://mspoweruser.com/microsoft-finally-blocking-users-creating-microsoft-account-work-email-address/. 
 		
 		
 image::Images\prerequis.png[width=50%,height=50%]
