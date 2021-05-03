@@ -28,7 +28,7 @@ image::Images\creationApp.PNG[width=50%,height=50%]
 [start=4]
        4. On the TeachSpreadSheetsApp page (tab overview), copy the value of the application ID (client) and save it, you will need it after.
          
-image::Images\overview.PNG[width=50%,height=50%]
+image::Images\overview.png[width=50%,height=50%]
 
 
 == 2. Add Microsoft Graph SDKs to your Maven Project
