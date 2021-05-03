@@ -41,23 +41,45 @@ image::Images\overview.PNG[width=50%,height=50%]
        
 ```xml
 <dependency>
-       <groupId>com.microsoft.graph</groupId>
-	<artifactId>microsoft-graph-auth</artifactId>
-	<version>0.3.0</version>
+   <groupId>com.microsoft.graph</groupId>
+   <artifactId>microsoft-graph-auth</artifactId>
+   <version>0.3.0</version>
 </dependency>
 <dependency>
-	<groupId>com.microsoft.graph</groupId>
-	<artifactId>microsoft-graph-core</artifactId>
-	<version>1.0.9</version>
+   <groupId>com.microsoft.graph</groupId>
+   <artifactId>microsoft-graph-core</artifactId>
+   <version>1.0.9</version>
 </dependency>
 <dependency>
-  <groupId>com.microsoft.graph</groupId>
-  <artifactId>microsoft-graph</artifactId>
-  <version>2.10.0</version>
+   <groupId>com.microsoft.graph</groupId>
+   <artifactId>microsoft-graph</artifactId>
+   <version>2.10.0</version>
+</dependency>
+<dependency>
+   <groupId>com.microsoft.azure</groupId>
+   <artifactId>msal4j</artifactId>
+   <version>1.9.1</version>
+</dependency>
+<dependency>
+   <groupId>org.slf4j</groupId>
+   <artifactId>slf4j-api</artifactId>
+   <version>1.6.1</version>
+</dependency>
+<dependency>
+   <groupId>org.slf4j</groupId>
+   <artifactId>slf4j-simple</artifactId>
+   <version>1.6.1</version>
 </dependency>
 ```      
 
 == 3. Authentification
 In this section you will see how you will build the authentification to get an access token. To call Microsoft Graph, your app must acquire an access token from Azure Active Directory (Azure AD). If you get an access token from Azure Azure AD it will allow you to have access to Microsoft Graph resources and the file wich are in your onedrive.
+
+A sample code for authentication can be found in this git repository. You can use it to code the authentication of your application.
+
+When you run the code you will be redirected to a web browser and you will have to identify yourself.
+To identify yourself, you have to use a personal account because Dauphine does not seem to allow access to the GUI Azure AD, probably because Dauphine has disabled it. 
+After the authentification, follow the instuctions until the end and then go back to your IDE. 
+
 
 
