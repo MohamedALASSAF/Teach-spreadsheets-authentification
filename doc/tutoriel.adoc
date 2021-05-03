@@ -1,4 +1,4 @@
-= Create/Read/ Modify an Excel sheet by using Microsoft Graph API
+= Microsoft Graph API Authentification 
 
 Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the Microsoft Graph API.
 
