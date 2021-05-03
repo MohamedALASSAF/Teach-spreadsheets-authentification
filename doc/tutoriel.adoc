@@ -79,7 +79,9 @@ A sample code for authentication can be found in this https://github.com/Mohamed
 
 When you run the code you will be redirected to a web browser and you will have to identify yourself.
 To identify yourself, you have to use a personal account because Dauphine does not seem to allow access to the GUI Azure AD, probably because Dauphine has disabled it. 
-After the authentification, follow the instuctions until the end and then go back to your IDE. 
+After the authentification, follow the instuctions until the end and when you see this picture below, go back to your IDE. 
 
+
+image::Images\done.png[width=50%,height=50%]
 
 
