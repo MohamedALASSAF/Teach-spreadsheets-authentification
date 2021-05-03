@@ -75,7 +75,7 @@ image::Images\overview.PNG[width=50%,height=50%]
 == 3. Authentification
 In this section you will see how you will build the authentification to get an access token. To call Microsoft Graph, your app must acquire an access token from Azure Active Directory (Azure AD). If you get an access token from Azure Azure AD it will allow you to have access to Microsoft Graph resources and the file wich are in your onedrive.
 
-A sample code for authentication can be found in this git repository. You can use it to code the authentication of your application.
+A sample code for authentication can be found in this https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/master/src/main/java/io/github/oliviercailloux/InteractiveFlow.java[git repository]. You can use it to code the authentication of your application.
 
 When you run the code you will be redirected to a web browser and you will have to identify yourself.
 To identify yourself, you have to use a personal account because Dauphine does not seem to allow access to the GUI Azure AD, probably because Dauphine has disabled it. 
