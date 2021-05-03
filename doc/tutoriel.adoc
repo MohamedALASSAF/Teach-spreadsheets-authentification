@@ -18,7 +18,7 @@ image::Images\prerequis.png[width=50%,height=50%]
 [start=3]
        3. Register your App: Go to the Register App page with https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps[this link]  .
            After signing up or registering, you will be lead to the the Register App page.
-           On the Register an App page, set the values as follows.
+           On the Register an App page, choose new registration and set the values as follows.
            * Set the Name on TeachSpreadSheetsApp.
            * Define the Types of Accounts supported in an microsoft organization directory and personal accounts.
            * Under URI redirect ,replace the drop-down list by "Public client/native(mobile and desktop)" and set value on "http://localhost".
