@@ -61,7 +61,7 @@ https://search.maven.org/search?q=a:msal4j[Link to the microsoft azure dependenc
 == 3. Authentification
 In this section you will see how you will build the authentification to get an access token. To call Microsoft Graph, your app must acquire an access token from Azure Active Directory (Azure AD). If you get an access token from Azure Azure AD it will allow you to have access to Microsoft Graph resources and the file which are in your onedrive.
 
-A sample code for authentication can be found in this https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/Authenticator.java#L19[git repository]. You can use it to code the authentication of your application.
+A sample code for authentication can be found in this https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/Authenticator.java#L19[git repository]. You can use it to code the authentication of your application.
 
 When you run the code you will be redirected to a web browser and you will have to identify yourself.
 To identify yourself, you have to use a personal account because Dauphine does not seem to allow access to the GUI Azure AD, probably because Dauphine has disabled it. 
@@ -75,34 +75,34 @@ image::Images_TUTO\done.png[width=50%,height=50%]
 In this version of the tutorial you have first to create  manually your Excel file in your onedrive. We will show you how to do it with java code in a later version.
 We will use the name of your Excel file to get the id of the file because we will need the id to interact with the file later.
 
-1. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetReader.java#L23[getFileId] will allow you to get the id of your Excel file.
+1. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetReader.java#L23[getFileId] will allow you to get the id of your Excel file.
 
 
 [start=2]
-2. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L72[createNewWorkSheet] will allow you to create worksheet in your Excel file.
+2. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L72[createNewWorkSheet] will allow you to create worksheet in your Excel file.
 
 *To create the function : createNewWorkSheet  we usesd https://docs.microsoft.com/fr-fr/graph/api/worksheetcollection-add?view=graph-rest-1.0&tabs=java[this documentation ]*
 
 [start=3]
-3. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L104[writeStringIntheSheet] will allow you to write in a specific zone of your worksheet.
+3. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L104[writeStringIntheSheet] will allow you to write in a specific zone of your worksheet.
 
 [start=4]
-4. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L144[changeCellColor] will allow you to change the color of a cell.
+4. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L144[changeCellColor] will allow you to change the color of a cell.
 
 [start=5]
-5. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L196[setFont] will allow you to change the font of a cell.
+5. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L196[setFont] will allow you to change the font of a cell.
 
 [start=6]
-6. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L248[setFormat] will allow you to change the format of a cell.
+6. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetWriter.java#L248[setFormat] will allow you to change the format of a cell.
 
 [start=7]
-7. The function https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/WorksheetReader.java#L54[getCellValue] will allow you to get the value of a cell.
+7. The function https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/WorksheetReader.java#L54[getCellValue] will allow you to get the value of a cell.
 
 If you want more functionality you can go to the https://docs.microsoft.com/fr-fr/graph/api/worksheetcollection-add?view=graph-rest-1.0&tabs=http[documentation] 
 
 == 5. Test the application
 
-You will find an example of utilisation of the functions that we described earlier in the class https://github.com/samba914/MSGRAPH_Tutoriel/blob/7fae1ec894806c991e1a04205a2770f8de5913be/src/main/java/io/github/oliviercailloux/tutorial/App.java#L14[App].
+You will find an example of utilisation of the functions that we described earlier in the class https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/5f71cbed98248e5f9befeb7cea7083ff79ae4453/src/main/java/io/github/oliviercailloux/tutorial/App.java#L14[App].
 You can adapt the example to your application.
 
 When you run code given in the class *Tutorial*, you will obtain this result(picture below) in your Excel sheet.
