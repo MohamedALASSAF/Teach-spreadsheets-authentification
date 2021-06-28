@@ -1,0 +1,116 @@
+= Create/Read/ Modify an Excel sheet by using Microsoft Graph API
+
+Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the Microsoft Graph API.
+
+== 1. Register your application
+
+       1. Prerequisite
+		* To access to the Microsoft Graph API you must have an Azure account : You can create one and access to Microsoft Graph for free. indeed with a free account we can create up to 10 applications on Azure and send 1 000 0000 requests per month. So for our project it is more than enough. Azure also propose paid sevices for more features like Azure SQL Database, VPN ,virtual machine etc. (https://azure.microsoft.com/fr-fr/free/?WT.mc_id=A261C142F[source (bottom of the page to see what we have for free)]
+		* If you haven't an Azure account, don't worry you can create new a one. Just make sure that you are using a personnal email (if you use your Dauphine email you will not be able to register your app as we can see on the picture below). You can learn more about that by reading this https://mspoweruser.com/microsoft-finally-blocking-users-creating-microsoft-account-work-email-address/[article]. 
+		
+		
+image::Images_TUTO\prerequis.png[width=50%,height=50%]
+*Error given by trying to create an account with Dauphine email*
+
+[start=2]
+	2. Set up a tenant : To setup a tenant you can follow the https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant[Microsoft documentation]
+
+[start=3]
+       3. Register your App: Go to the Register App page with https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps[this link]  .
+           After signing up or registering, you will be lead to the the Register App page.
+           On the Register an App page, choose new registration and set the values as follows.
+           * Set the Name on TeachSpreadSheetsApp.
+           * Define the Types of Accounts supported in an microsoft organization directory and personal accounts.
+           * Under URI redirect ,replace the drop-down list by "Public client/native(mobile and desktop)" and set value on "http://localhost".
+          
+image::Images_TUTO\creationApp.png[width=50%,height=50%]
+
+[start=4]
+       4. On the TeachSpreadSheetsApp page (tab overview), copy the value of the application ID (client) and save it, you will need it after.
+         
+image::Images_TUTO\overview.png[width=50%,height=50%]
+
+
+== 2. Add Microsoft Graph SDKs to your Maven Project
+[start=1]
+       1. The Microsoft Graph SDKs are designed to simplify the access of Microsoft Graph API.
+       The service library of Microsoft Graph SDKs contains models and request builders that are generated from Microsoft Graph metadata. So it will allow you to interact easily with your Onedrive. https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage[OneDrive] is an online storage platform offered by microsoft.
+       
+[start=2]
+       2. Add this following dependencies came from the https://docs.microsoft.com/fr-fr/graph/sdks/sdk-installation[Microsoft SDK documentation] in the dependencies element in pom.xml:
+       
+```xml
+<dependency>
+   <groupId>com.microsoft.graph</groupId>
+	 <artifactId>microsoft-graph</artifactId>
+	 <version>3.3.0</version>
+</dependency>
+```  
+https://search.maven.org/search?q=com.microsoft.graph[Link to the microsoft graph dependency on the Maven Central server]
+
+```xml
+<dependency>
+   <groupId>com.microsoft.azure</groupId>
+   <artifactId>msal4j</artifactId>
+   <version>1.9.1</version>
+</dependency>
+```  
+https://search.maven.org/search?q=a:msal4j[Link to the microsoft azure dependency on the Maven Central server]
+
+
+== 3. Authentification
+In this section you will see how you will build the authentification to get an access token. To call Microsoft Graph, your app must acquire an access token from Azure Active Directory (Azure AD). If you get an access token from Azure Azure AD it will allow you to have access to Microsoft Graph resources and the file which are in your onedrive.
+
+A sample code for authentication can be found in this https://github.com/MohamedALASSAF/Teach-spreadsheets-authentification/blob/dev2/src/main/java/io/github/oliviercailloux/InteractiveFlow.java[git repository]. You can use it to code the authentication of your application.
+
+When you run the code you will be redirected to a web browser and you will have to identify yourself.
+To identify yourself, you have to use a personal account because Dauphine does not seem to allow access to the GUI Azure AD, probably because Dauphine has disabled it. 
+After the authentification, follow the instuctions until the end and when you see this picture below, go back to your IDE. 
+
+
+image::Images_TUTO\done.png[width=50%,height=50%]
+
+== 4. Create, modify or read an Excel sheet
+
+In this version of the tutorial you have first to create  manually your Excel file in your onedrive. We will show you how to do it with java code in a later version.
+We will use the name of your Excel file to get the id of the file because we will need the id to interact with the file later.
+
+1. The function https://github.com/oliviercailloux-org/dep-git-Teach_spreadsheets/blob/f9c1ae6da79bafc332892e20e214f56c17f8dc26/src/main/java/io/github/oliviercailloux/teach_spreadsheets/online/read/WorksheetReader.java#L23[getFileId] will allow you to get the id of your Excel file.
+
+
+[start=2]
+2. The function https://github.com/oliviercailloux-org/dep-git-Teach_spreadsheets/blob/f9c1ae6da79bafc332892e20e214f56c17f8dc26/src/main/java/io/github/oliviercailloux/teach_spreadsheets/online/write/WorksheetWriter.java#L77[createNewWorkSheet] will allow you to create worksheet in your Excel file.
+
+*To create the function : createNewWorkSheet  we usesd https://docs.microsoft.com/fr-fr/graph/api/worksheetcollection-add?view=graph-rest-1.0&tabs=java[this documentation ]*
+
+[start=3]
+3. The function https://github.com/oliviercailloux-org/dep-git-Teach_spreadsheets/blob/f9c1ae6da79bafc332892e20e214f56c17f8dc26/src/main/java/io/github/oliviercailloux/teach_spreadsheets/online/write/WorksheetWriter.java#L109[writeStringIntheSheet] will allow you to write in a specific zone of your worksheet.
+
+[start=4]
+4. The function https://github.com/oliviercailloux-org/dep-git-Teach_spreadsheets/blob/f9c1ae6da79bafc332892e20e214f56c17f8dc26/src/main/java/io/github/oliviercailloux/teach_spreadsheets/online/write/WorksheetWriter.java#L149[changeCellColor] will allow you to change the color of a cell.
+
+[start=5]
+5. The function https://github.com/oliviercailloux-org/dep-git-Teach_spreadsheets/blob/f9c1ae6da79bafc332892e20e214f56c17f8dc26/src/main/java/io/github/oliviercailloux/teach_spreadsheets/online/read/WorksheetReader.java#L54[getCellValue] will allow you to get the value of a cell.
+
+If you want more functionality you can go to the https://docs.microsoft.com/fr-fr/graph/api/worksheetcollection-add?view=graph-rest-1.0&tabs=http[documentation] 
+
+== 5. Test the application
+
+You will find an example of utilisation of the functions that we described earlier in the class https://github.com/oliviercailloux-org/dep-git-Teach_spreadsheets/blob/b72f1062b7a30f055672dde00b3106e03d084ee8/src/main/java/io/github/oliviercailloux/teach_spreadsheets/online/write/Tutorial.java#L21[Turorial].
+You can adapt the example to your application.
+
+When you run code given in the class *Tutorial*, you will obtain this result(picture below) in your Excel sheet.
+
+image::Images_TUTO\Exemple.PNG[width=30%,height=30%]
+
+
+
+=== Source
+
+https://docs.microsoft.com/fr-fr/graph/api/worksheetcollection-add?view=graph-rest-1.0&tabs=java
+
+https://docs.microsoft.com/graph/tutorials/java
+
+https://docs.microsoft.com/fr-fr/graph/sdks/sdk-installation
+
+
