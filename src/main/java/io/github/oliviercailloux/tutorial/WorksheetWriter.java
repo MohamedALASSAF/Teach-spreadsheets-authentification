@@ -194,7 +194,7 @@ public class WorksheetWriter {
 	 * 
 	 */
 	public void setFont(String fileId, String worksheetName, GraphServiceClient graphClient, int row, int column,
-			Boolean bold, String color, Double size, String name) {
+			boolean bold, String color, double size, String name) {
 		checkArgument(row >= 0, column >= 0);
 		WorkbookRangeFont workbookRangeFont = new WorkbookRangeFont();
 		workbookRangeFont.bold = bold;
